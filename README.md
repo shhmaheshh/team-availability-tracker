@@ -1,16 +1,129 @@
-# React + Vite
+# Team Availability Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack application that allows teams to track member availability in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* View team members and their roles
+* Toggle availability status (Available / Busy)
+* Conditional rendering of status badges
+* React frontend with state management
+* Express backend API
+* SQLite database persistence
+* Availability changes remain saved after page refresh and server restart
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+* React
+* Vite
+* CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+
+* Node.js
+* Express
+* SQLite
+
+## Project Structure
+
+team-availability-tracker/
+
+├── src/
+
+├── public/
+
+├── backend/
+
+│ ├── server.js
+
+│ ├── database.js
+
+│ └── team.db
+
+├── package.json
+
+├── README.md
+
+└── .gitignore
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/team-availability-tracker.git
+cd team-availability-tracker
+```
+
+### Frontend Setup
+
+```bash
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+### Backend Setup
+
+Open a second terminal:
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+## API Endpoints
+
+### Get Team Members
+
+```http
+GET /api/team
+```
+
+### Update Availability
+
+```http
+PATCH /api/team/:id
+```
+
+Request Body:
+
+```json
+{
+  "available": true
+}
+```
+
+## Database
+
+The application uses SQLite for persistence.
+
+The database is automatically created and seeded with sample team members when the backend starts for the first time.
+
+## Assignment Requirements Covered
+
+* Display team members
+* Availability toggle
+* Conditional rendering
+* Frontend-backend synchronization
+* Database updates
+* Visual status updates
+* Persistent data storage
+
+## Author
+
+Built as part of a Team Availability Tracker coding assignment.
